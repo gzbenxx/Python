@@ -1,1 +1,1 @@
-print("www") 
+print("push from PC-2") 

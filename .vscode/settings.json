@@ -1,5 +1,25 @@
 {
+
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "11_env\\Scripts\\python.exe"
+    "python.pythonPath": "11_env\\Scripts\\python.exe",
+    
+    //yapf for code formatting 
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfPath": "11_env\\Scripts\\yapf.exe",
+    "python.formatting.yapfArgs": ["--style", "{based_on_style: chromium, indent_width: 20}"],
+
+    //pylint for errors detectation
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "11_env\\Scripts\\pylint.exe",
+    "python.linting.pylintArgs":["--load-plugins=pylint_django"],
+    
+    //flake8 for errors detectation
+    //"python.linting.flake8Enabled": true,
+    //"python.linting.flake8Path": "11_env\\Scripts\\flake8",
+
+    "git.autofetch": true,
+
+    
+
 
 }

@@ -1,3 +1,5 @@
 {
-    "workbench.colorTheme": "Abyss"
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "11_env\\Scripts\\python.exe"
+
 }

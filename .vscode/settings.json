@@ -1,7 +1,7 @@
 {
 
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "newenv\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
     
     //yapf for code formatting 
     "python.formatting.provider": "yapf",

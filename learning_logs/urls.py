@@ -21,5 +21,6 @@ urlpatterns = [
 
     #page for editing an entry
     url(r'^edit_entry/(?P<entry_id>\d+)/$',views.edit_entry,name='edit_entry'),
+        
  
 ]

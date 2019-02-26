@@ -58,7 +58,7 @@ def new_entry(request, topic_id):
     context = {'topic': topic,'form':form}
     return render(request,'learning_logs/new_entry.html',context)
 
-
+ 
 def edit_entry(request, entry_id):
     """edit an existing entry."""
     entry = Entry.objects.get(id=entry_id)

@@ -25,7 +25,7 @@ def topic(request,topic_id):
 
     #make sure the topic belongs to the current user
     if topic.owner != request.uesr:
-        raise Http404
+        raise Http404('entries not exist')
 
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic,'entries':entries}
@@ -78,7 +78,7 @@ def edit_entry(request, entry_id):
 
     # URL protections
     if topic.owner != request.user:
-        raise Http404
+        raise Http404('entries not exist')
     
     if request.method != 'POST':
         #initial request ,pre-fill form with the current entry.

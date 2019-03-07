@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
- 
+
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
@@ -23,9 +23,9 @@ def topic(request,topic_id):
     """show a single topic and all its entries."""
     topic = Topic.objects.get(id=topic_id)
 
-    #make sure the topic belongs to the current user
-    if topic.owner != request.uesr:
-        raise Http404('entries not exist')
+    # URL protection when user requested to others 127.0.0.1:8000/topics/5/
+    if topic.owner != request.user:
+        raise Http404
 
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic,'entries':entries}
@@ -76,9 +76,9 @@ def edit_entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
 
-    # URL protections
+    # URL protections when unauthorized user request to others  127.0.0.1:8000/edit_entry/5/
     if topic.owner != request.user:
-        raise Http404('entries not exist')
+        raise Http404
     
     if request.method != 'POST':
         #initial request ,pre-fill form with the current entry.
